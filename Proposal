@@ -1,0 +1,132 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just For You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 35px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease;
+    }
+    h1 {
+      color: #ffd6e0;
+      margin-bottom: 15px;
+      transition: all 1s ease;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #f1f1f1;
+    }
+    .heart {
+      font-size: 55px;
+      animation: beat 1.2s infinite;
+      margin: 25px 0;
+    }
+    button {
+      background: linear-gradient(135deg, #ff4b5c, #ff758c);
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(255,75,92,0.6);
+    }
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 18px;
+      animation: reveal 2s ease forwards;
+    }
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(#ffffff33 1px, transparent 1px);
+      background-size: 3px 3px;
+      animation: moveStars 20s linear infinite;
+      z-index: -1;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes reveal {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: 100px 200px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="card">
+    <h1 id="title" style="font-size:32px;letter-spacing:1px;">Faria… 💗</h1>
+    <p>
+      Ei page ta ami shudhu tomar jonno banaiছি, Faria.
+      <br />
+      Amar moner kotha shundor ekta moment e tomake feel করাতে চাই…
+    </p>
+    <div class="heart">💖</div>
+    <p style="font-size:14px;opacity:0.8;">(take a deep breath)</p>
+    <p id="surpriseName" class="hidden" style="font-size:24px;font-weight:700;color:#ffd6e0;">Actually… my heart chose you, Faria ✨</p>
+    <button onclick="showMessage()">Tap here</button>
+    <div id="message" class="hidden">
+      Faria…
+      <br /><br />
+      Every little conversation,
+      every small smile,
+      unknowingly became important to me.
+      <br /><br />
+      Tumi amar jibone ekta shundor feeling hoye gecho.
+      <br /><br />
+      <strong style="font-size:22px;color:#ffd6e0;">I love you.</strong> 💞
+      <br /><br />
+      Ami chai tumi amar hoye thako,
+      ajker din theke…
+      <br /><br />
+      Will you be mine? 🌸
+      <br /><br />
+      <span style="font-size:14px;opacity:0.7;">– Gulbahar</span>
+    </div>
+  </div>  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('surpriseName').style.display = 'block';
+      const title = document.getElementById('title');
+      title.style.opacity = '0';
+      setTimeout(() => {
+        title.innerText = 'Faria… 💕';
+        title.style.opacity = '1';
+      }, 1200);
+    }
+  </script></body>
+</html>
